@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Lab5.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Lab5.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Mar 09 12:15:47 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue Mar 20 12:04:22 2018
 <BR><P>
 <H3>Maximum Stack Usage =       1192 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -136,8 +136,8 @@ Mutually Recursive functions
  <LI><a href="#[76]">PWM1Generator2_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[76]">PWM1Generator2_Handler</a><BR>
  <LI><a href="#[77]">PWM1Generator3_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[77]">PWM1Generator3_Handler</a><BR>
  <LI><a href="#[78]">PWM1Fault_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[78]">PWM1Fault_Handler</a><BR>
- <LI><a href="#[c2]">UART_OutUHex</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[c2]">UART_OutUHex</a><BR>
- <LI><a href="#[c3]">UART_OutUDec</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[c3]">UART_OutUDec</a><BR>
+ <LI><a href="#[c1]">UART_OutUHex</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[c1]">UART_OutUHex</a><BR>
+ <LI><a href="#[c2]">UART_OutUDec</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[c2]">UART_OutUDec</a><BR>
  <LI><a href="#[c8]">fillmessage</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[c8]">fillmessage</a><BR>
  <LI><a href="#[92]">parrotdelay</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[92]">parrotdelay</a><BR>
 </UL>
@@ -1218,12 +1218,12 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7f]"></a>StartCritical</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_tm4c123.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeriodicTask2_Init
+<BR><BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeriodicTask2_Init
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Time_Init
 </UL>
 
 <P><STRONG><a name="[80]"></a>EndCritical</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_tm4c123.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeriodicTask2_Init
+<BR><BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeriodicTask2_Init
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Time_Init
 </UL>
 
@@ -1292,8 +1292,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b9]"></a>BSP_Clock_GetFreq</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, bsp.o(i.BSP_Clock_GetFreq))
-<BR><BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeriodicTask2_Init
+<P><STRONG><a name="[b8]"></a>BSP_Clock_GetFreq</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, bsp.o(i.BSP_Clock_GetFreq))
+<BR><BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeriodicTask2_Init
 </UL>
 
 <P><STRONG><a name="[ca]"></a>BSP_Clock_InitFastest</STRONG> (Thumb, 126 bytes, Stack size 0 bytes, bsp.o(i.BSP_Clock_InitFastest))
@@ -1305,8 +1305,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parrotdelay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commonInit
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commandList
+<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commonInit
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commandList
 </UL>
 
 <P><STRONG><a name="[96]"></a>BSP_LCD_DrawChar</STRONG> (Thumb, 260 bytes, Stack size 56 bytes, bsp.o(i.BSP_LCD_DrawChar))
@@ -1378,7 +1378,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartCritical
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EndCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
 <P><STRONG><a name="[a2]"></a>DisplayDirectory</STRONG> (Thumb, 254 bytes, Stack size 1048 bytes, lab5.o(i.DisplayDirectory))
@@ -1400,7 +1400,7 @@ Global Symbols
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisableInterrupts
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EraseAddrValid
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_Format
 </UL>
 
@@ -1412,7 +1412,7 @@ Global Symbols
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisableInterrupts
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MassWriteAddrValid
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
 <P><STRONG><a name="[a8]"></a>Flash_Write</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, flashprogram.o(i.Flash_Write))
@@ -1423,7 +1423,7 @@ Global Symbols
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisableInterrupts
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteAddrValid
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_WriteArray
 </UL>
 
@@ -1433,7 +1433,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_WriteSector
 </UL>
 
@@ -1458,17 +1458,17 @@ Global Symbols
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MountDirectory
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_WriteSector
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b1]"></a>OS_File_Flush</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, efile.o(i.OS_File_Flush))
+<P><STRONG><a name="[b1]"></a>OS_File_Flush</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, efile.o(i.OS_File_Flush))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64 + Unknown Stack Size
 <LI>Call Chain = OS_File_Flush &rArr; eDisk_WriteSector &rArr; Flash_WriteArray &rArr; Flash_Write
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_WriteSector
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -1478,64 +1478,62 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_Format
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b4]"></a>OS_File_New</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, efile.o(i.OS_File_New))
+<P><STRONG><a name="[b4]"></a>OS_File_New</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, efile.o(i.OS_File_New))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = OS_File_New &rArr; MountDirectory &rArr; eDisk_ReadSector
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lastsector
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MountDirectory
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b6]"></a>OS_File_Read</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, efile.o(i.OS_File_Read))
+<P><STRONG><a name="[b6]"></a>OS_File_Read</STRONG> (Thumb, 68 bytes, Stack size 24 bytes, efile.o(i.OS_File_Read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = OS_File_Read &rArr; eDisk_ReadSector
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Size
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_ReadSector
+<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_ReadSector
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[b7]"></a>OS_File_Size</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, efile.o(i.OS_File_Size))
-<BR><BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Read
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<P><STRONG><a name="[c5]"></a>OS_File_Size</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, efile.o(i.OS_File_Size))
+<BR><BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b8]"></a>PeriodicTask2_Init</STRONG> (Thumb, 164 bytes, Stack size 24 bytes, texas.o(i.PeriodicTask2_Init))
+<P><STRONG><a name="[b7]"></a>PeriodicTask2_Init</STRONG> (Thumb, 164 bytes, Stack size 24 bytes, texas.o(i.PeriodicTask2_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
 <LI>Call Chain = PeriodicTask2_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartCritical
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EndCritical
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Clock_GetFreq
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Clock_GetFreq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
 <P><STRONG><a name="[cb]"></a>Profile_Init</STRONG> (Thumb, 418 bytes, Stack size 0 bytes, profile.o(i.Profile_Init))
 <BR><BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[bf]"></a>TExaS_Init</STRONG> (Thumb, 5820 bytes, Stack size 104 bytes, texas.o(i.TExaS_Init))
+<P><STRONG><a name="[be]"></a>TExaS_Init</STRONG> (Thumb, 5820 bytes, Stack size 104 bytes, texas.o(i.TExaS_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176 + Unknown Stack Size
 <LI>Call Chain = TExaS_Init &rArr; OS_File_Append &rArr; eDisk_WriteSector &rArr; Flash_WriteArray &rArr; Flash_Write
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUHex
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUDec
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutString
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeriodicTask2_Init
+<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUHex
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUDec
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutString
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeriodicTask2_Init
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;texascompare
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;texasbuildbuff
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetGrade
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;texasbuildbuff
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetGrade
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Read
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Size
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Size
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_New
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Format
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Flush
@@ -1546,7 +1544,7 @@ Global Symbols
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Erase
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_WriteSector
 <LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_ReadSector
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_Init
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_Init
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_Format
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Time_Init
 </UL>
@@ -1558,44 +1556,44 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
 </UL>
-<P><STRONG><a name="[c0]"></a>UART_Init</STRONG> (Thumb, 148 bytes, Stack size 0 bytes, texas.o(i.UART_Init))
-<BR><BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<P><STRONG><a name="[bf]"></a>UART_Init</STRONG> (Thumb, 148 bytes, Stack size 0 bytes, texas.o(i.UART_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
 <P><STRONG><a name="[c7]"></a>UART_OutChar</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, texas.o(i.UART_OutChar))
-<BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUHex
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUDec
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutString
+<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUHex
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUDec
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutString
 </UL>
 
-<P><STRONG><a name="[c1]"></a>UART_OutString</STRONG> (Thumb, 24 bytes, Stack size 4 bytes, texas.o(i.UART_OutString))
+<P><STRONG><a name="[c0]"></a>UART_OutString</STRONG> (Thumb, 24 bytes, Stack size 4 bytes, texas.o(i.UART_OutString))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = UART_OutString
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutChar
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[c3]"></a>UART_OutUDec</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, texas.o(i.UART_OutUDec))
+<P><STRONG><a name="[c2]"></a>UART_OutUDec</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, texas.o(i.UART_OutUDec))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12 + In Cycle
 <LI>Call Chain = UART_OutUDec &rArr;  UART_OutUDec (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUDec
+<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUDec
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutChar
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUDec
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUDec
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[c2]"></a>UART_OutUHex</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, texas.o(i.UART_OutUHex))
+<P><STRONG><a name="[c1]"></a>UART_OutUHex</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, texas.o(i.UART_OutUHex))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + In Cycle
 <LI>Call Chain = UART_OutUHex &rArr;  UART_OutUHex (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUHex
+<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUHex
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutChar
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUHex
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_OutUHex
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
 <P><STRONG><a name="[56]"></a>WideTimer3A_Handler</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, bsp.o(i.WideTimer3A_Handler))
@@ -1613,22 +1611,24 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_tm4c123.o(RESET)
 </UL>
-<P><STRONG><a name="[af]"></a>appendfat</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, efile.o(i.appendfat))
-<BR><BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Append
+<P><STRONG><a name="[af]"></a>appendfat</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, efile.o(i.appendfat))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = appendfat
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Append
 </UL>
 
-<P><STRONG><a name="[b3]"></a>eDisk_Format</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, edisk.o(i.eDisk_Format))
+<P><STRONG><a name="[b3]"></a>eDisk_Format</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, edisk.o(i.eDisk_Format))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
 <LI>Call Chain = eDisk_Format &rArr; Flash_Erase
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Erase
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Format
 </UL>
 
-<P><STRONG><a name="[c4]"></a>eDisk_Init</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, edisk.o(i.eDisk_Init))
-<BR><BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<P><STRONG><a name="[c3]"></a>eDisk_Init</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, edisk.o(i.eDisk_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -1637,7 +1637,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Read
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MountDirectory
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
 <P><STRONG><a name="[b0]"></a>eDisk_WriteSector</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, edisk.o(i.eDisk_WriteSector))
@@ -1646,12 +1646,12 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_WriteArray
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Flush
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Append
 </UL>
 
-<P><STRONG><a name="[ae]"></a>findfreesector</STRONG> (Thumb, 52 bytes, Stack size 12 bytes, efile.o(i.findfreesector))
+<P><STRONG><a name="[ae]"></a>findfreesector</STRONG> (Thumb, 54 bytes, Stack size 12 bytes, efile.o(i.findfreesector))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = findfreesector
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;max
@@ -1660,7 +1660,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Append
 </UL>
 
-<P><STRONG><a name="[b5]"></a>lastsector</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, efile.o(i.lastsector))
+<P><STRONG><a name="[b5]"></a>lastsector</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, efile.o(i.lastsector))
 <BR><BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findfreesector
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_New
 </UL>
@@ -1669,9 +1669,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 1192 + Unknown Stack Size
 <LI>Call Chain = main &rArr; DisplayDirectory &rArr; BSP_LCD_OutUDec4 &rArr; BSP_LCD_DrawString &rArr; BSP_LCD_DrawChar &rArr; setAddrWindow
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Profile_Init
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Size
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Size
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_New
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Format
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_File_Flush
@@ -1680,7 +1680,7 @@ Global Symbols
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayDirectory
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EnableInterrupts
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisableInterrupts
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_Init
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eDisk_Init
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_Init
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_FillScreen
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawString
@@ -1710,29 +1710,29 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_SetCursor
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_FillScreen
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecommand
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commonInit
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commandList
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecommand
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commonInit
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commandList
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_Init
 </UL>
 
-<P><STRONG><a name="[bb]"></a>commandList</STRONG> (Thumb, 86 bytes, Stack size 24 bytes, bsp.o(i.commandList))
+<P><STRONG><a name="[ba]"></a>commandList</STRONG> (Thumb, 86 bytes, Stack size 24 bytes, bsp.o(i.commandList))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = commandList &rArr; BSP_Delay1ms
 </UL>
 <BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Delay1ms
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecommand
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecommand
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commonInit
+<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commonInit
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ST7735_InitR
 </UL>
 
-<P><STRONG><a name="[ba]"></a>commonInit</STRONG> (Thumb, 452 bytes, Stack size 8 bytes, bsp.o(i.commonInit))
+<P><STRONG><a name="[b9]"></a>commonInit</STRONG> (Thumb, 452 bytes, Stack size 8 bytes, bsp.o(i.commonInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = commonInit &rArr; commandList &rArr; BSP_Delay1ms
 </UL>
 <BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Delay1ms
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commandList
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commandList
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ST7735_InitR
 </UL>
@@ -1767,15 +1767,15 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = setAddrWindow
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writedata
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecommand
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writecommand
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_FillRect
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_DrawChar
 </UL>
 
-<P><STRONG><a name="[bc]"></a>writecommand</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, bsp.o(i.writecommand))
+<P><STRONG><a name="[bb]"></a>writecommand</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, bsp.o(i.writecommand))
 <BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setAddrWindow
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commandList
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commandList
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ST7735_InitR
 </UL>
 
@@ -1783,7 +1783,7 @@ Local Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LCD_FillRect
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setAddrWindow
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pushColor
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commandList
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;commandList
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ST7735_InitR
 </UL>
 
@@ -1799,28 +1799,28 @@ Local Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write
 </UL>
 
-<P><STRONG><a name="[be]"></a>Encrypt</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, texas.o(i.Encrypt))
+<P><STRONG><a name="[bd]"></a>Encrypt</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, texas.o(i.Encrypt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Encrypt
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetGrade
+<BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetGrade
 </UL>
 
-<P><STRONG><a name="[bd]"></a>SetGrade</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, texas.o(i.SetGrade))
+<P><STRONG><a name="[bc]"></a>SetGrade</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, texas.o(i.SetGrade))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SetGrade &rArr; Encrypt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Encrypt
+<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Encrypt
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
-<P><STRONG><a name="[c5]"></a>texasbuildbuff</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, texas.o(i.texasbuildbuff))
-<BR><BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<P><STRONG><a name="[c4]"></a>texasbuildbuff</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, texas.o(i.texasbuildbuff))
+<BR><BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 
 <P><STRONG><a name="[c6]"></a>texascompare</STRONG> (Thumb, 34 bytes, Stack size 12 bytes, texas.o(i.texascompare))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = texascompare
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
+<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TExaS_Init
 </UL>
 <P>
 <H3>

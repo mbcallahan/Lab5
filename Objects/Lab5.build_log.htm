@@ -26,11 +26,21 @@ Project File Date:  03/09/2018
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Build target 'Target'
+Rebuild target 'Target'
+compiling eDisk.c...
+compiling FlashProgram.c...
+compiling Lab5.c...
 compiling eFile.c...
+eFile.c(73): warning:  #68-D: integer conversion resulted in a change of sign
+  uint8_t endsector=0, maxendsector=-1;	//this way they can be observed and debugged
+eFile.c: 1 warning, 0 errors
+assembling startup_TM4C123.s...
+compiling Profile.c...
+compiling system_TM4C123.c...
+compiling BSP.c...
 linking...
-Program Size: Code=12700 RO-data=3312 RW-data=96 ZI-data=3712  
-".\Objects\Lab5.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=12712 RO-data=3312 RW-data=100 ZI-data=3716  
+".\Objects\Lab5.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -55,11 +65,11 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup:1.0.1
       Source file:   Device\Source\ARM\startup_TM4C123.s
-      Source file:   Device\Source\system_TM4C123.c
       Include file:  Device\Include\TM4C123\TM4C123.h
+      Source file:   Device\Source\system_TM4C123.c
 
    * Component: ARM::CMSIS:CORE:5.0.1
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

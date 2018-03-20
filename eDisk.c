@@ -68,7 +68,7 @@ enum DRESULT eDisk_ReadSector(
     uint8_t *buff,     // Pointer to a RAM buffer into which to store
     uint8_t sector){   // sector number to read from
 // starting ROM address of the sector is	EDISK_ADDR_MIN + 512*sector
-  if(EDISK_ADDR_MIN+512*sector> EDISK_ADDR_MAX) return RES_PARERR; //gave sector outside of memory
+  if(EDISK_ADDR_MIN+(512*sector)> EDISK_ADDR_MAX) return RES_PARERR; //gave sector outside of memory
 // copy 512 bytes from ROM (disk) into RAM (buff)
   uint32_t offset=EDISK_ADDR_MIN+512*sector;
   for(uint32_t i = 0;i <512; i++ ){
@@ -97,8 +97,8 @@ if(EDISK_ADDR_MIN+512*sector> EDISK_ADDR_MAX) return RES_PARERR; //gave sector o
 // write 512 bytes from RAM (buff) into ROM (disk)
 // you can use Flash_FastWrite or Flash_WriteArray
 // **write this function**
-		if(Flash_WriteArray((uint32_t *)buff,(EDISK_ADDR_MIN+512*sector),512/4 )==512/4)
-  return RES_OK;
+		if(Flash_WriteArray((uint32_t *)buff,(EDISK_ADDR_MIN+(512*sector)),512/4 )==512/4)
+			return RES_OK;
 		return RES_ERROR;
 }
 
@@ -115,7 +115,7 @@ enum DRESULT eDisk_Format(void){
 // erase all flash from EDISK_ADDR_MIN to EDISK_ADDR_MAX
 // **write this function**
 	
-	for(uint32_t i = EDISK_ADDR_MIN;i < EDISK_ADDR_MAX; i=i+4 )// go through array at 4 bytes at a time
+	for(uint32_t i = EDISK_ADDR_MIN;i <= EDISK_ADDR_MAX; i=i+1024 )// go through array at 4 bytes at a time
 	{
 	 Flash_Erase(i);
  }

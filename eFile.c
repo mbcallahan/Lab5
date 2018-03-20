@@ -40,28 +40,55 @@ return;
 // Note: This function will loop forever without returning
 // if the file has no end (i.e. the FAT is corrupted).
 uint8_t lastsector(uint8_t start){
-
+	if (start == 255) return 255;
+  
 	uint8_t i = start;
+	while (i != 255) {
+		i = FAT[start];
+		if (i == 255) {
+			return start;
+		} else {
+			start = i;
+		}
+	}	
+	return 255; // error
+	/*uint8_t i = start;
   while(FAT[i]!=255){
-		 i= FAT[i];
+		while (i != 255) {
+		i = FAT[start];
+		if (i == 255) {
+			return start;
+		} else {
+			start = i;
+		}
 	}
-	
-  return i;
+  return 254;*/
 }
 
 // Return the index of the first free sector.
 // Note: This function will loop forever without returning
 // if a file has no end or if (Directory[255] != 255)
 // (i.e. the FAT is corrupted).
-uint8_t endsector=0, maxendsector=0;	//this way they can be observed and debugged
-uint8_t findfreesector(void){
 
+uint8_t endsector=0, maxendsector=-1;	//this way they can be observed and debugged
+uint8_t findfreesector(void){
+int16_t fs = -1;
+	uint8_t i = 0;
+	int16_t ls = (int16_t) lastsector(Directory[i]);
+	
+	while (ls != 255) {
+		fs = max(fs, ls);
+		i++;
+		ls = lastsector(Directory[i]);
+	}
+	
+	return fs + 1;/*
 for(uint8_t i = 0; i<255; ++i){
 	endsector=lastsector(Directory[i]);
 	if( endsector== 255) break;
 	maxendsector=max(endsector, maxendsector);
 }
-return maxendsector+1;
+return maxendsector+1;*/
    
 }
 
@@ -72,8 +99,24 @@ return maxendsector+1;
 // Note: This function will loop forever without returning
 // if the file has no end (i.e. the FAT is corrupted).
 uint8_t appendfat(uint8_t num, uint8_t n){
+	uint8_t m = 0;
+	uint8_t sect = Directory[num];
 	
-  if (Directory[num]==255){num[Directory]=n;return 0;}
+	if (sect == 255) { // file is new, empty
+		Directory[num] = n;
+		return 0;
+	} else {
+		while (1) {
+			m = FAT[sect]; // next sector
+			if (m == 255) { // eof
+				FAT[sect] = n;
+				return 0;
+			} else {
+				sect = m; // skip to next sector
+			}
+		}
+	}
+  /*if (Directory[num]==255){Directory[num]=n;return 0;}
 
   uint8_t i = 0;
   while(1){
@@ -84,7 +127,7 @@ uint8_t appendfat(uint8_t num, uint8_t n){
 	return 0;} 
 	
 	i=FAT[i];
-	}
+	}*/
 }
 
 //********OS_File_New*************
@@ -96,7 +139,7 @@ uint8_t OS_File_New(void){
 	MountDirectory();
 	 if(lastsector(Directory[254])!=255) return 255;
 	uint8_t i =0; 
-	while(Directory[i]!= 255) ++i;
+	while(Directory[i]!= 255&&i<255) ++i;
 	return i;
 }
 
@@ -141,12 +184,22 @@ uint8_t OS_File_Append(uint8_t num, uint8_t buf[512]){
 // Errors:  255 on failure because no data
 uint8_t OS_File_Read(uint8_t num, uint8_t location,
                      uint8_t buf[512]){
-	if(OS_File_Size(num)==0) return 255;
+	uint8_t count = 0;
+	uint8_t sect = Directory[num];
+											 
+	if (sect == 255) return 255; // error, no data
+											 
+	while (count != location) { // traverse FAT to find sector
+		if (FAT[sect] == 255) return 255;
+		sect = FAT[sect];
+		count++;
+	}
+	/*if(OS_File_Size(num)==0) return 255;
 	uint8_t sector=Directory[num];
 	for(uint8_t i = 0; i< location; i++){
 		sector= FAT[sector];//incriment through path location number of times
-	}
-  eDisk_ReadSector(buf, sector);
+	}*/
+  eDisk_ReadSector(buf, sect);
   return 0; 
 }
 
@@ -159,10 +212,9 @@ uint8_t OS_File_Read(uint8_t num, uint8_t location,
 uint8_t OS_File_Flush(void){
 		for(uint8_t i = 0; i< 255; ++i){
 			 Buff[i]=Directory[i];
+			Buff[i+256]=FAT[i];
 		}
-			for(uint8_t i = 0; i< 255; ++i){
-			 Buff[i+256]=FAT[i];
-		}
+
 
   return eDisk_WriteSector(Buff, 255) >0 ?255:0; 
 }
