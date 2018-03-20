@@ -68,14 +68,14 @@ enum DRESULT eDisk_ReadSector(
     uint8_t *buff,     // Pointer to a RAM buffer into which to store
     uint8_t sector){   // sector number to read from
 // starting ROM address of the sector is	EDISK_ADDR_MIN + 512*sector
-if(EDISK_ADDR_MIN+512*sector> EDISK_ADDR_MAX) return RES_PARERR; //gave sector outside of memory
+  if(EDISK_ADDR_MIN+512*sector> EDISK_ADDR_MAX) return RES_PARERR; //gave sector outside of memory
 // copy 512 bytes from ROM (disk) into RAM (buff)
-			uint32_t offset=EDISK_ADDR_MIN+512*sector;
- for(uint32_t i = 0;i <512; i++ ){
-	 buff[i]=*((uint8_t *)(i+offset));//read by casting i into a 8 bit pointer
-
- }
-			
+  uint32_t offset=EDISK_ADDR_MIN+512*sector;
+  for(uint32_t i = 0;i <512; i++ ){
+    buff[i]= *((uint8_t *)(i+offset));//read by casting i into a 8 bit pointer
+    
+  }
+  
   return RES_OK;
 }
 

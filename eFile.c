@@ -46,16 +46,16 @@ uint8_t lastsector(uint8_t start){
 		 i= FAT[i];
 	}
 	
-  return i; // replace this line
+  return i;
 }
 
 // Return the index of the first free sector.
 // Note: This function will loop forever without returning
 // if a file has no end or if (Directory[255] != 255)
 // (i.e. the FAT is corrupted).
+uint8_t endsector=0, maxendsector=0;	//this way they can be observed and debugged
 uint8_t findfreesector(void){
-	uint8_t endsector=0, maxendsector=0;
-	
+
 for(uint8_t i = 0; i<255; ++i){
 	endsector=lastsector(Directory[i]);
 	if( endsector== 255) break;
@@ -73,17 +73,17 @@ return maxendsector+1;
 // if the file has no end (i.e. the FAT is corrupted).
 uint8_t appendfat(uint8_t num, uint8_t n){
 	
-if (Directory[num]==255){num[Directory]=n;return 0;}
+  if (Directory[num]==255){num[Directory]=n;return 0;}
 
   uint8_t i = 0;
-while(1){
+  while(1){
 	if(FAT[i]==255){
 
 	FAT[i]=n;
 	
-  return 0;} // replace this line
+	return 0;} 
 	
-	++i;
+	i=FAT[i];
 	}
 }
 
